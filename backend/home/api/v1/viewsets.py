@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Azul
-from .serializers import AzulSerializer
+from home.models import Aulz,Azul
+from .serializers import AulzSerializer,AzulSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class AzulViewSet(viewsets.ModelViewSet):
     serializer_class = AzulSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Azul.objects.all()
+
+class AulzViewSet(viewsets.ModelViewSet):
+    serializer_class = AulzSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Aulz.objects.all()
